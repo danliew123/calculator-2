@@ -1,0 +1,57 @@
+.body {
+    padding: 32px;
+    width: 512px;
+    border: 4px solid gray;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.display {
+    height: 128px;
+    width: 512px;
+    border: 4px solid rgb(68, 63, 63);
+    box-sizing: border-box;
+    border-radius: 8px;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 16px;
+    gap: 4px;
+}
+
+.display > div {
+    font-size: 42px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.numButtons {
+    height: 512px;
+    width: 384px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.numButtons > button,
+.opeButtons > button {
+    height:112px;
+    width: 112px;
+    box-sizing: border-box;
+    margin: 8px;
+    font-size: 32px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+
+.allButtons {
+    display: flex;
+    justify-content: center;
+}
+
+.opeButtons {
+    height: 512px;
+    width: 128px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
