@@ -11,7 +11,7 @@ function multiplication(a, b) {
 };
 
 function division(a, b) {
-    return a / b
+    return Math.round((a / b) * 1000000000000)/1000000000000
 };
 
 const aNum = document.querySelector('.aNum');
@@ -181,8 +181,72 @@ add.addEventListener('click', () => {
     }
 })
 
+subtract.addEventListener('click', () => {
+    console.log('-')
+    if(aa === '') {
+        return
+    } else if(bb === '') {
+        operator.textContent = '-'
+        oo = subtraction
+    } else if(bb) {
+        aa = operate(aa, bb, oo);
+        console.log(aa)
+        aNum.textContent = aa
+        oo = subtraction;
+        operator.textContent = '-'
+        bb = ''
+        bNum.textContent = ''
+    }
+})
+
+multiply.addEventListener('click', () => {
+    console.log('x')
+    if(aa === '') {
+        return
+    } else if(bb === '') {
+        operator.textContent = 'x'
+        oo = multiplication
+    } else if(bb) {
+        aa = operate(aa, bb, oo);
+        console.log(aa)
+        aNum.textContent = aa
+        oo = multiplication;
+        operator.textContent = 'x'
+        bb = ''
+        bNum.textContent = ''
+    }
+})
+
+divide.addEventListener('click', () => {
+    console.log('%')
+    if(aa === '') {
+        return
+    } else if(bb === '') {
+        operator.textContent = '%'
+        oo = division
+    } else if(bb === '0') {
+        alert('This is wrong!')
+        bb = ''
+        bNum.textContent = ''
+
+    } else if(bb) {
+        aa = operate(aa, bb, oo);
+        console.log(aa)
+        aNum.textContent = aa
+        oo = division;
+        operator.textContent = '%'
+        bb = ''
+        bNum.textContent = ''
+    }
+})
+
 equal.addEventListener('click', () => {
-    if(aa && oo && bb) {
+    if(oo === division && bb === '0') {
+        alert('This is wrong!')
+        bb = ''
+        bNum.textContent = ''
+
+    } else if(!(aa === undefined && oo === undefined && bb === undefined)) {
         aa = operate(aa, bb, oo)
         aNum.textContent = aa
         oo = ''
